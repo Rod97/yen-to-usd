@@ -8,7 +8,6 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
 export class UsdValue implements OnInit, OnChanges {
   @Output() onUsdValueChange: EventEmitter<string> = new EventEmitter<string>();
   @Input() usdValue: string;
-  usdInput: any;
 
   constructor() {
   }
@@ -16,15 +15,12 @@ export class UsdValue implements OnInit, OnChanges {
   ngOnInit() {
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("change detected in usd")
-    console.log("new usd value is " + this.usdValue);
     if(this.usdValue=="0"){
       this.usdValue="";
     }
   }
   
   send(){
-    console.log("send triggered in usd")
-    this.onUsdValueChange.emit(this.usdInput);
+    this.onUsdValueChange.emit(this.usdValue);
   }
 }

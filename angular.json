@@ -115,6 +115,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "currencyConverter"
+    }
+  },
+  "defaultProject": "currencyConverter",
+  "cli": {
+    "analytics": false
+  }
 }

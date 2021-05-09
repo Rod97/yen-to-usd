@@ -7,7 +7,7 @@
     placeholder="Enter value in USD"
     class="mx-25 mb-25"
     data-test-id="usd-value"
-    [(ngModel)]="usdInput"
+    [(ngModel)]="usdValue"
     (input)=send()
-  >{{usdValue | currency: 'USD'}}</textarea>
+  >{{usdValue | currency : 'USD'}}</textarea>
 </div>

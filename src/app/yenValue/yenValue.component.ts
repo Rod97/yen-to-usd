@@ -8,7 +8,6 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
 export class YenValue implements OnInit, OnChanges {
   @Output() onYenValueChange: EventEmitter<string> = new EventEmitter<string>();
   @Input() yenValue: string;
-  yenInput: any;
 
   constructor() {}
 
@@ -22,8 +21,6 @@ export class YenValue implements OnInit, OnChanges {
   }
 
   send(){
-    console.log("send triggered in yen comp");
-    console.log("input is " + this.yenInput);
-    this.onYenValueChange.emit(this.yenInput);
+    this.onYenValueChange.emit(this.yenValue);
   }
 }
