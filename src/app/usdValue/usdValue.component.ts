@@ -5,26 +5,14 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
   templateUrl: "./usdValue.component.html",
   styleUrls: ["./usdValue.component.scss"]
 })
-export class UsdValue implements OnInit, OnChanges {
+export class UsdValue implements OnInit {
   @Output() onUsdValueChange: EventEmitter<string> = new EventEmitter<string>();
   @Input() usdValue: string;
-  usdInput: any;
 
   constructor() {
   }
  
   ngOnInit() {
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("change detected in usd")
-    console.log("new usd value is " + this.usdValue);
-    if(this.usdValue=="0"){
-      this.usdValue="";
-    }
-  }
   
-  send(){
-    console.log("send triggered in usd")
-    this.onUsdValueChange.emit(this.usdInput);
-  }
 }
